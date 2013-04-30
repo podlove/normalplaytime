@@ -33,16 +33,15 @@ class NptParserTest extends PHPUnit_Framework_TestCase {
 			"1:62:63" => NULL,
 		);
 
-		$parser = new Parser();
 		foreach ( $examples as $npt_string => $expected_ms ) {
-			$this->assertEquals($expected_ms, $parser->parse($npt_string));
+			$this->assertEquals($expected_ms, Parser::parse($npt_string));
 		}
 	}
 
 	public function testParserToSeconds( $value='' ) {
 		$parser = new Parser();
-		$this->assertEquals(1, $parser->parse(" 1.234", 's'));
-		$this->assertEquals(1, $parser->parse(" 1.834", 's'));
+		$this->assertEquals(1, Parser::parse(" 1.234", 's'));
+		$this->assertEquals(1, Parser::parse(" 1.834", 's'));
 	}
 
 	public function testMsStringParser() {
@@ -54,7 +53,6 @@ class NptParserTest extends PHPUnit_Framework_TestCase {
 			"1234" => 123
 		);
 
-		$parser = new Parser();
 		foreach ( $examples as $ms_string => $expected_ms ) {
 			$this->assertEquals($expected_ms, Parser::parse_ms_string($ms_string));
 		}

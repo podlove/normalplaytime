@@ -10,21 +10,20 @@ PHP parser for Normal Play Time (RFC 2326)
 ## Usage
 
 ```php
+<?php
 use \Podlove\NormalPlayTime\Parser;
 
-$parser = new Parser();
-
 // get seconds or milliseconds
-$parser->parse("1.834");      // 1834
-$parser->parse("1.834", "s"); // 1
+Parser::parse("1.834");      // 1834
+Parser::parse("1.834", "s"); // 1
 
 // invalid returns NULL
-$parser->parse("abc"); // NULL
+Parser::parse("abc"); // NULL
 
 // valid example NPT strings
-$parser->parse("1");        // 1000
-$parser->parse("12:34");    // 754000
-$parser->parse("12:34.56"); // 754560
-$parser->parse("1:2");      // 62000
-$parser->parse("1:2:3.4");  // 3723400
+Parser::parse("1");        // 1000
+Parser::parse("12:34");    // 754000
+Parser::parse("12:34.56"); // 754560
+Parser::parse("1:2");      // 62000
+Parser::parse("1:2:3.4");  // 3723400
 ```
