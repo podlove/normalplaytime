@@ -1,5 +1,7 @@
 # Normal Play Time Parser
 
+[![Build Status](https://travis-ci.org/podlove/normalplaytime.png?branch=master)](https://travis-ci.org/podlove/normalplaytime)
+
 PHP parser for Normal Play Time (RFC 2326)
 
 - http://www.ietf.org/rfc/rfc2326.txt
